@@ -1,0 +1,6 @@
+﻿
+    ChangeLog MyWpfCorePluginTemplate
+
+    Version 1.0.0.0 Rev 0 09.04.2022
+    
+    - Start

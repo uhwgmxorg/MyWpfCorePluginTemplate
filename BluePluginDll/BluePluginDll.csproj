@@ -1,0 +1,17 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net5.0-windows</TargetFramework>
+	<UseWPF>true</UseWPF>
+	<AutoGenerateBindingRedirects>false</AutoGenerateBindingRedirects>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\PluginContractsDll\PluginContractsDll.csproj" />
+  </ItemGroup>
+
+  <Target Name="PostBuild" AfterTargets="PostBuildEvent">
+    <Exec Command="if not exist &quot;$(SolutionDir)$(SolutionName)$(OutDir)Plugins&quot; mkdir &quot;$(SolutionDir)$(SolutionName)\$(OutDir)Plugins&quot;&#xD;&#xA;copy /y &quot;$(TargetDir)$(TargetFileName)&quot; &quot;$(SolutionDir)$(SolutionName)\$(OutDir)Plugins" />
+  </Target>
+
+</Project>

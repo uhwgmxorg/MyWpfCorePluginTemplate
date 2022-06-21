@@ -1,0 +1,21 @@
+﻿<Window x:Class="MyWpfCorePluginTemplate.Dialogs.AboutBoxDlg"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        ShowInTaskbar="False" 
+        AllowsTransparency="True" 
+        WindowStyle="None" 	
+        Background="Transparent" 
+        MouseLeftButtonDown="Window_MouseLeftButtonDown" 
+        MouseWheel="Window_MouseWheel" 
+        MouseRightButtonDown ="Window_MouseRightButtonDown" 
+        Loaded="Window_Main_Loaded" 
+        Title="AboutBox" WindowStartupLocation="CenterOwner" ResizeMode="NoResize" Height="247" Width="490">
+    <Grid Opacity="{Binding Transparents}">
+        <Rectangle Name="Rectangle_Main"  RadiusY="20" RadiusX="20" Stroke="#FF1F3C53" StrokeThickness="3" Fill="{Binding Backgrount1}" >
+        </Rectangle>
+        <Label x:Name="label" Content="{Binding AboutBox}" HorizontalContentAlignment="Center" VerticalAlignment="Top" Margin="57,29,63.007,0" FontWeight="Bold" FontSize="14"/>
+        <Border BorderBrush="#FF515151" BorderThickness="3" Margin="47,83,42,49" CornerRadius="3">
+            <TextBox x:Name="textBox" TextWrapping="Wrap" Text="{Binding Message}" Background="{Binding Backgrount2}" BorderThickness="2" Margin="2" IsReadOnly="True"/>
+        </Border>
+    </Grid>
+</Window>

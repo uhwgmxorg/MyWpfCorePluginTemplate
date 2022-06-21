@@ -1,0 +1,93 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net5.0-windows</TargetFramework>
+    <Nullable>disable</Nullable>
+    <UseWPF>true</UseWPF>
+	<UseWindowsForms>true</UseWindowsForms>
+	<ApplicationIcon>Resources\plugin-icon.ico</ApplicationIcon>
+    <PackageIcon>plugin-icon.ico</PackageIcon>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="Resources\1.png" />
+    <None Remove="Resources\1b.png" />
+    <None Remove="Resources\2.png" />
+    <None Remove="Resources\2b.png" />
+    <None Remove="Resources\3.png" />
+    <None Remove="Resources\4.png" />
+    <None Remove="Resources\5.png" />
+    <None Remove="Resources\about.png" />
+    <None Remove="Resources\default.png" />
+    <None Remove="Resources\deletelogfiles.png" />
+    <None Remove="Resources\hierarchical-structure.png" />
+    <None Remove="Resources\logfiles.png" />
+    <None Remove="Resources\logout.png" />
+    <None Remove="Resources\puzzle-piece-plugin.png" />
+    <None Remove="Resources\question.png" />
+    <None Remove="Resources\support.png" />
+    <None Remove="Resources\user.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Include="Resources\plugin-icon.ico" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="NLog" Version="4.7.15" />
+    <PackageReference Include="System.ComponentModel.Composition" Version="6.0.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\PluginContractsDll\PluginContractsDll.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Reference Include="ChangeLogCoreUtilityDll">
+      <HintPath>..\Lib\ChangeLogCoreUtilityDll.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="Resources\1.png" />
+    <Resource Include="Resources\1b.png" />
+    <Resource Include="Resources\2.png" />
+    <Resource Include="Resources\2b.png" />
+    <Resource Include="Resources\3.png" />
+    <Resource Include="Resources\4.png" />
+    <Resource Include="Resources\5.png" />
+    <Resource Include="Resources\about.png" />
+    <Resource Include="Resources\default.png" />
+    <Resource Include="Resources\deletelogfiles.png" />
+    <Resource Include="Resources\hierarchical-structure.png" />
+    <Resource Include="Resources\logfiles.png" />
+    <Resource Include="Resources\logout.png" />
+    <Resource Include="Resources\plugin-icon.ico" />
+    <Resource Include="Resources\puzzle-piece-plugin.png" />
+    <Resource Include="Resources\question.png" />
+    <Resource Include="Resources\support.png" />
+    <Resource Include="Resources\user.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Update="ChangeLog.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="NLog.config">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Resources\diagram.png">
+      <CopyToOutputDirectory></CopyToOutputDirectory>
+    </None>
+    <None Update="Resources\plugin-icon.ico">
+      <Pack>True</Pack>
+      <PackagePath>\</PackagePath>
+    </None>
+  </ItemGroup>
+
+  <Target Name="PostBuild" AfterTargets="PostBuildEvent">
+    <Exec Command="copy &quot;$(SolutionDir)Help\_tmphhp\MyWpfCorePluginTemplate.chm&quot; &quot;$(TargetDir)&quot;" />
+  </Target>
+
+</Project>
