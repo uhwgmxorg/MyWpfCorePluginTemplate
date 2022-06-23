@@ -24,3 +24,10 @@ obj/
 [Rr]elease*/
 _ReSharper*/
 .vs/
+Help/_tmphhp/*.html
+Help/_tmphhp/*.log
+Help/_tmphhp/*.hhp
+Help/_tmphhp/*.hhk
+Help/_tmphhp/*.hhc
+Help/_tmphhp/*.h
+Help/_tmphhp/*.txt
