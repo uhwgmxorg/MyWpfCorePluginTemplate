@@ -1,6 +1,12 @@
 ﻿
     ChangeLog MyWpfCorePluginTemplate
 
+    Version 1.0.0.1 Rev 0 26.06.2022
+
+    - Bugfix in MainWindow.xaml.cs when displaying the name of 
+      the SelectedPlugin in the Label left of "Selected Plugins" 
+      in the MainWindow.
+
     Version 1.0.0.0 Rev 0 09.04.2022
     
     - Start
